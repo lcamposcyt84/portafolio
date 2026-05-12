@@ -63,6 +63,39 @@
   line-height: 1.6;
 }
 
+/* ── Phones ── */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .serviceCard {
+    padding: 1.25rem 1rem;
+  }
+
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+/* ── Tablets ── */
+@media (min-width: 481px) and (max-width: 767px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Desktop ── */
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);

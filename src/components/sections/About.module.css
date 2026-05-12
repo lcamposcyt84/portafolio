@@ -48,6 +48,43 @@
   border-radius: var(--radius-sm);
 }
 
+/* ── Phones ── */
+@media (max-width: 480px) {
+  .bentoGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+
+  .cardContent h3 {
+    font-size: 1.2rem;
+  }
+
+  .cardContent h4 {
+    font-size: 1rem;
+  }
+
+  .iconWrapper {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ── Tablets ── */
+@media (min-width: 481px) and (max-width: 767px) {
+  .bentoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .itemWide {
+    grid-column: span 2;
+  }
+}
+
+/* ── Desktop and up ── */
 @media (min-width: 768px) {
   .bentoGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -62,6 +99,7 @@
   }
 }
 
+/* ── Large desktop ── */
 @media (min-width: 1024px) {
   .bentoGrid {
     grid-template-columns: repeat(4, 1fr);

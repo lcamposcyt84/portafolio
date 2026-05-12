@@ -63,7 +63,7 @@
 
 .hero-subtitle {
   font-family: 'Syncopate', sans-serif !important;
-  font-size: 1.5rem;
+  font-size: clamp(0.8rem, 2.2vw, 1.5rem);
   font-weight: 700 !important;
   letter-spacing: 0.06em;
   color: rgba(255, 255, 255, 0.95);
@@ -72,10 +72,11 @@
   text-align: center;
   text-transform: uppercase;
   /* Pill border (círculo alrededor) */
-  border: 4px solid rgba(255, 255, 255, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.5);
   border-radius: 100px;
-  padding: 1rem 3rem;
+  padding: clamp(0.6rem, 1.5vw, 1rem) clamp(1.2rem, 4vw, 3rem);
   display: inline-block;
+  max-width: 90vw;
   /* Static Neon Glow */
   text-shadow: 
     0 0 5px #fff,
@@ -104,19 +105,20 @@
   display: inline-block;
   text-align: center;
   font-family: 'Syncopate', sans-serif;
-  font-size: 1.25rem;
+  font-size: clamp(0.75rem, 1.5vw, 1.25rem);
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #ffffff;
-  margin-bottom: 3.5rem;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
   text-decoration: none;
   cursor: pointer;
-  padding: 1rem 2.5rem;
+  padding: clamp(0.65rem, 1.5vw, 1rem) clamp(1.2rem, 3vw, 2.5rem);
   border: 2px solid #b026ff;
   border-radius: 50px;
   background: rgba(176, 38, 255, 0.05);
   animation: neonBlink 3s infinite;
+  pointer-events: all;
 }
 
 .portfolio-label:hover {
@@ -159,9 +161,6 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
-
-@media (max-width: 1100px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 600px)  { .portfolio-grid { grid-template-columns: 1fr; } }
 
 /* ── GLASS CARD ── */
 .portfolio-card {
@@ -273,3 +272,156 @@
 }
 
 .portfolio-card:hover .card-link-icon { color: #88aadd; }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE OVERHAUL — Mobile First
+══════════════════════════════════════════ */
+
+/* ── 480px and below (small phones) ── */
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: clamp(5rem, 18vw, 7rem);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    min-height: 55vh;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 10vw, 2.6rem);
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+    margin-bottom: 1.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.65rem, 3.8vw, 0.9rem);
+    padding: 0.65rem 1.2rem;
+    border-width: 2px;
+    border-radius: 60px;
+    letter-spacing: 0.03em;
+    line-height: 1.55;
+    max-width: 95vw;
+  }
+
+  .portfolio-label {
+    font-size: 0.72rem;
+    padding: 0.65rem 1.2rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.75rem;
+  }
+
+  .portfolio-section {
+    padding: 0 1rem 3rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .card-content {
+    padding: 0.75rem 0.9rem 1rem;
+  }
+
+  .card-title {
+    font-size: 0.95rem;
+  }
+
+  .card-desc {
+    font-size: 0.78rem;
+  }
+}
+
+/* ── 481px – 768px (large phones / small tablets) ── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero-section {
+    padding-top: clamp(6rem, 15vw, 8rem);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 7.5vw, 3.2rem);
+    line-height: 1.12;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.75rem, 3.2vw, 1.05rem);
+    padding: 0.75rem 1.75rem;
+    border-width: 2px;
+  }
+
+  .portfolio-label {
+    font-size: 0.82rem;
+    padding: 0.72rem 1.6rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .portfolio-section {
+    padding: 0 1.25rem 4rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* ── 769px – 1024px (tablets / small laptops) ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-section {
+    padding-top: clamp(7rem, 12vh, 10rem);
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 2.3vw, 1.25rem);
+    padding: 0.9rem 2.5rem;
+  }
+
+  .portfolio-section {
+    padding: 0 2rem 5rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+/* ── 1025px – 1440px (standard desktops) ── */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ── 1441px+ (large / ultrawide screens) ── */
+@media (min-width: 1441px) {
+  .hero-section {
+    padding-top: clamp(10rem, 16vh, 14rem);
+  }
+
+  .hero-title {
+    font-size: clamp(5rem, 5.5vw, 7rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+    padding: 1.2rem 4rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  .card-title { font-size: 1rem; }
+  .card-desc  { font-size: 0.8rem; }
+}

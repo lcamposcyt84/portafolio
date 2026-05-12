@@ -239,18 +239,84 @@
    RESPONSIVE
 ────────────────────────────────────────── */
 
-@media (max-width: 768px) {
+/* ── Phones ── */
+@media (max-width: 480px) {
   .overlay {
-    padding: 100px var(--space-sm) 48px;
+    padding: 80px 1rem 36px;
+  }
+
+  .title {
+    font-size: clamp(1.6rem, 9vw, 2.4rem);
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    font-size: clamp(0.85rem, 3.8vw, 1rem);
+    margin-top: 16px;
   }
 
   .cardsGrid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cardsSection {
+    padding-top: 8vh;
+  }
+
+  .cardTitle { font-size: 0.95rem; }
+  .cardDesc  { font-size: 0.8rem; }
+}
+
+/* ── Large phones / small tablets ── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .overlay {
+    padding: 100px 1.25rem 48px;
+  }
+
+  .title {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .cardsSection {
+    padding-top: 10vh;
   }
 }
 
+/* ── Tablets ── */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .overlay {
+    padding: 120px 2rem 56px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+/* ── Desktop ── */
 @media (min-width: 1024px) {
   .cardsGrid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── Widescreen ── */
+@media (min-width: 1440px) {
+  .title {
+    font-size: clamp(4rem, 5vw, 6rem);
+  }
+  .subtitle {
+    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
   }
 }

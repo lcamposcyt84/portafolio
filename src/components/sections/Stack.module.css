@@ -68,3 +68,31 @@
     transform: translateX(calc(-50% - (var(--space-md) / 2)));
   }
 }
+
+/* ── Phones ── */
+@media (max-width: 480px) {
+  .techItem {
+    min-width: 140px;
+    padding: 0.75rem 1rem;
+  }
+
+  .techName {
+    font-size: 1.1rem;
+  }
+
+  .techCategory {
+    font-size: 0.75rem;
+  }
+}
+
+/* ── Tablets ── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .techItem {
+    min-width: 165px;
+    padding: 0.9rem 1.25rem;
+  }
+
+  .techName {
+    font-size: 1.3rem;
+  }
+}
