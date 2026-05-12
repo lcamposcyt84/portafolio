@@ -6,6 +6,7 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,12 +85,47 @@ export const Navbar = () => {
           })}
         </nav>
         
-        <button className="md:hidden text-white">
+        <button 
+          className="md:hidden text-white"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            {isMobileMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
           </svg>
         </button>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <motion.nav 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="md:hidden bg-[#010208]/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 flex flex-col gap-6"
+        >
+          {['INICIO', 'PORTAFOLIO', 'SERVICIOS', 'CONTACTO'].map((item) => {
+            const targetId = item.toLowerCase();
+            const isActive = activeSection === targetId;
+            
+            return (
+              <a
+                key={item}
+                href={`#${targetId}`}
+                onClick={(e) => {
+                  handleScrollTo(e, targetId);
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`text-[12px] font-display font-bold tracking-[0.15em] transition-colors duration-300 ${isActive ? 'text-primary' : 'text-white/80'}`}
+              >
+                {item}
+              </a>
+            );
+          })}
+        </motion.nav>
+      )}
       </motion.header>
 
       <ServicesModal isOpen={isServicesOpen} onClose={() => setIsServicesOpen(false)} />
