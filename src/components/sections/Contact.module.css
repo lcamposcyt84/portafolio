@@ -1,0 +1,109 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contactInfo h3 {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+  color: #fff;
+}
+
+.contactInfo p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  font-size: 1.125rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.linkCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--color-glass-bg);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.linkCard:hover {
+  background: rgba(0, 240, 255, 0.05);
+  border-color: var(--color-primary);
+  transform: translateX(10px);
+}
+
+.icon {
+  color: var(--color-primary);
+}
+
+.linkCard h4 {
+  font-size: 1.125rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.linkCard span {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.form {
+  background: var(--color-glass-bg);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-glass-border);
+}
+
+.inputGroup {
+  margin-bottom: var(--space-md);
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.1);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitBtn {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}

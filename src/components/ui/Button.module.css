@@ -1,0 +1,78 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.size-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.size-md {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.size-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Primary Button */
+.primary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2), inset 0 0 10px rgba(0, 240, 255, 0.1);
+}
+
+.primary:hover {
+  background: rgba(0, 240, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+/* Secondary Button */
+.secondary {
+  background: var(--color-glass-bg);
+  border: 1px solid var(--color-glass-border);
+  color: var(--color-text);
+  backdrop-filter: blur(10px);
+}
+
+.secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Glow Effect */
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 60%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.button:hover .glow {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}

@@ -1,0 +1,246 @@
+.footer {
+  background-color: rgba(10, 10, 15, 0.95);
+  border-top: 1px solid var(--color-glass-border);
+  padding-top: var(--space-xl);
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand {
+  max-width: 300px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+  position: relative;
+}
+
+.logoImage {
+  position: relative;
+  height: clamp(70px, 10vw, 110px);
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+  clip-path: inset(0 0 40% 0);
+  margin-top: -15%;
+}
+
+.logoOverlayText {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(7px, 1vw, 9px);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 0 4px #000, 0 0 4px #000;
+  z-index: 5;
+}
+
+.logoIcon {
+  color: var(--color-primary);
+}
+
+.logoDot {
+  color: var(--color-primary);
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Removed direct QR display classes in favor of modal */
+
+.links {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.socialLink:hover {
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.modalContent {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modalQRImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.modalText {
+  color: #111;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.05);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.closeButton:hover {
+  background: rgba(0,0,0,0.1);
+  color: #000;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  to { transform: scale(1); }
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: var(--space-sm) 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+/* Tech Marquee */
+.techMarqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  padding: 2.5rem 0;
+  background: rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.techMarqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: techMarquee 30s linear infinite;
+}
+
+.techMarqueeContent {
+  display: flex;
+  gap: 3rem;
+  padding: 0 1.5rem;
+  width: max-content;
+}
+
+.techItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0.4;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  cursor: default;
+  min-width: 70px;
+}
+
+.techItem:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.techIcon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.techName {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+@keyframes techMarquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}

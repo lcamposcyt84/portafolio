@@ -1,0 +1,75 @@
+.bentoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.bentoItem {
+  height: 100%;
+}
+
+.cardContent {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cardContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+}
+
+.cardContent h4 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-xs);
+  color: #fff;
+}
+
+.cardContent p {
+  color: var(--color-text-muted);
+}
+
+.smallText {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.iconWrapper {
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  background: rgba(0, 240, 255, 0.1);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+@media (min-width: 768px) {
+  .bentoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .itemWide {
+    grid-column: span 2;
+  }
+  
+  .cardContent {
+    padding: var(--space-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bentoGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+  
+  .itemWide {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
