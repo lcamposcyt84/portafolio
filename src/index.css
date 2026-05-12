@@ -23,6 +23,14 @@
   h1, h2, h3, h4, h5, h6, .title, .hero-subtitle {
     @apply font-display font-bold tracking-tight;
   }
+
+  /* Hide Vercel Toolbar */
+  vercel-live,
+  #vercel-toolbar-wrapper,
+  .vercel-toolbar-wrapper,
+  vercel-toolbar {
+    display: none !important;
+  }
 }
 
 @layer utilities {

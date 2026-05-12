@@ -301,7 +301,7 @@
     padding-top: clamp(5rem, 18vw, 7rem);
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-    min-height: 55vh;
+    min-height: 40vh;
   }
 
   .hero-title {
@@ -358,6 +358,7 @@
     padding-top: clamp(6rem, 15vw, 8rem);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    min-height: 48vh;
   }
 
   .hero-title {
