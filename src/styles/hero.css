@@ -45,7 +45,7 @@
   padding-left: clamp(1.5rem, 5vw, 5rem);
   padding-right: clamp(1.5rem, 5vw, 5rem);
   pointer-events: none;
-  min-height: 62vh;
+  min-height: 85vh;
 }
 
 /* ── Hero Overlay — safe container for title+subtitle ── */
