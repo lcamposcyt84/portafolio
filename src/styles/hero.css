@@ -48,17 +48,35 @@
   min-height: 62vh;
 }
 
+/* ── Hero Overlay — safe container for title+subtitle ── */
+.hero-overlay {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
 /* ── Heading ── */
 .hero-title {
   font-family: 'Ethnocentric', 'Syncopate', sans-serif;
-  font-size: clamp(2.4rem, 6vw, 6rem);
+  /* clamp: min=1.4rem (never too big), preferred=8vw (fluid), max=6rem */
+  font-size: clamp(1.4rem, 8vw, 6rem);
   font-weight: 700;
   line-height: 1.1;
-  letter-spacing: 0.05em;
+  letter-spacing: clamp(0.01em, 0.3vw, 0.05em);
   text-transform: uppercase;
   color: #ffffff;
   text-shadow: 0 2px 12px rgba(0,0,0,.6);
   margin: 0 0 1.4rem;
+  /* Safety: never overflow viewport */
+  width: 100%;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .hero-subtitle {
@@ -287,10 +305,12 @@
   }
 
   .hero-title {
-    font-size: clamp(1.75rem, 10vw, 2.6rem);
-    letter-spacing: 0.02em;
-    line-height: 1.15;
-    margin-bottom: 1.1rem;
+    /* 7.5vw on 480px = 36px. Ethnocentric is wide but 'ARQUITECTURA' at 36px fits */
+    font-size: clamp(1rem, 7.5vw, 1.8rem);
+    letter-spacing: 0em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
   }
 
   .hero-subtitle {
@@ -341,8 +361,9 @@
   }
 
   .hero-title {
-    font-size: clamp(2rem, 7.5vw, 3.2rem);
-    line-height: 1.12;
+    font-size: clamp(1.4rem, 6.5vw, 2.6rem);
+    letter-spacing: 0em;
+    line-height: 1.15;
   }
 
   .hero-subtitle {
