@@ -16,14 +16,24 @@ export default function HeroOverlay() {
         SIN LÍMITES
       </motion.h1>
 
-      <motion.p
-        className="hero-subtitle"
+      <motion.div
+        className="hero-subtitle-container"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
       >
-        Donde la ingeniería se vuelve arte.
-      </motion.p>
+        <div className="subtitle-decorator">
+          <span className="dot"></span>
+          <span className="line"></span>
+        </div>
+        <p className="hero-subtitle">
+          DONDE LA INGENIERÍA SE VUELVE ARTE
+        </p>
+        <div className="subtitle-decorator right">
+          <span className="line"></span>
+          <span className="dot"></span>
+        </div>
+      </motion.div>
     </div>
   );
 }

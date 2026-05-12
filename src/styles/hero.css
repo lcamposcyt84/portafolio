@@ -79,29 +79,48 @@
   box-sizing: border-box;
 }
 
+.hero-subtitle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 24px);
+  width: 100%;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.subtitle-decorator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.subtitle-decorator .dot {
+  width: 4px;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+.subtitle-decorator .line {
+  height: 1px;
+  width: clamp(20px, 8vw, 120px);
+  background-color: #ffffff;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
 .hero-subtitle {
   font-family: 'Syncopate', sans-serif !important;
-  font-size: clamp(0.8rem, 2.2vw, 1.5rem);
+  font-size: clamp(0.75rem, 1.8vw, 1.2rem);
   font-weight: 700 !important;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.95);
-  line-height: 1.4;
-  margin: 0 auto;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  margin: 0;
   text-align: center;
   text-transform: uppercase;
-  /* Pill border (círculo alrededor) */
-  border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 100px;
-  padding: clamp(0.6rem, 1.5vw, 1rem) clamp(1.2rem, 4vw, 3rem);
-  display: inline-block;
-  max-width: 90vw;
-  /* Static Neon Glow */
-  text-shadow: 
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #00aaff,
-    0 0 40px #00aaff;
-  background: rgba(0, 170, 255, 0.12);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .hero-subtitle-accent {
@@ -313,13 +332,18 @@
     padding: 0 0.5rem;
   }
 
+  .hero-subtitle-container {
+    gap: 8px;
+  }
+
+  .subtitle-decorator .line {
+    width: clamp(15px, 6vw, 40px);
+  }
+
   .hero-subtitle {
-    font-size: clamp(0.65rem, 3.8vw, 0.9rem);
-    padding: 0.65rem 1.2rem;
-    border-width: 2px;
-    border-radius: 60px;
-    letter-spacing: 0.03em;
-    line-height: 1.55;
+    font-size: clamp(0.6rem, 3.2vw, 0.9rem);
+    letter-spacing: 0.04em;
+    line-height: 1.4;
     max-width: 95vw;
   }
 
@@ -367,10 +391,16 @@
     line-height: 1.15;
   }
 
+  .hero-subtitle-container {
+    gap: 12px;
+  }
+
+  .subtitle-decorator .line {
+    width: clamp(30px, 10vw, 80px);
+  }
+
   .hero-subtitle {
-    font-size: clamp(0.75rem, 3.2vw, 1.05rem);
-    padding: 0.75rem 1.75rem;
-    border-width: 2px;
+    font-size: clamp(0.75rem, 2vw, 1.05rem);
   }
 
   .portfolio-label {
