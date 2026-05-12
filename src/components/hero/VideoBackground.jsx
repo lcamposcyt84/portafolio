@@ -65,7 +65,8 @@ const VideoBackground = () => {
           transition: `opacity ${crossfadeDuration}s ease-in-out` 
         }}
       >
-        <source src="/src/Video/IMG_1773.MOV" type="video/quicktime" />
+        <source src="/video/hero.mov" type="video/mp4" />
+        <source src="/video/hero.mov" type="video/quicktime" />
       </video>
 
       {/* Video 2 */}
@@ -80,7 +81,8 @@ const VideoBackground = () => {
           transition: `opacity ${crossfadeDuration}s ease-in-out` 
         }}
       >
-        <source src="/src/Video/IMG_1773.MOV" type="video/quicktime" />
+        <source src="/video/hero.mov" type="video/mp4" />
+        <source src="/video/hero.mov" type="video/quicktime" />
       </video>
     </div>
   );
