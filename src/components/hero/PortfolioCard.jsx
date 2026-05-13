@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export default function PortfolioCard({ project, index }) {
+  const { t } = useTranslation();
+
   return (
     <motion.a
       href={project.link}
@@ -14,14 +17,14 @@ export default function PortfolioCard({ project, index }) {
       whileHover={{ y: -10 }}
     >
       <div className="card-image-wrapper">
-        <img src={project.image} alt={project.title} className="card-image" loading="lazy" />
+        <img src={project.image} alt={t(project.titleKey)} className="card-image" loading="lazy" />
         <div className="card-image-overlay" />
       </div>
 
       <div className="card-content">
-        <span className="card-category">{project.category}</span>
-        <h3 className="card-title">{project.title}</h3>
-        <p className="card-desc">{project.description.slice(0, 72)}…</p>
+        <span className="card-category">{t(project.categoryKey)}</span>
+        <h3 className="card-title">{t(project.titleKey)}</h3>
+        <p className="card-desc">{t(project.descriptionKey).slice(0, 72)}…</p>
 
         <div className="card-footer">
           <div className="card-tech">

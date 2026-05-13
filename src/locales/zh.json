@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "home": "首页",
+    "portfolio": "作品集",
+    "services": "服务",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "title": "VISUAL VISTAZO: 设计与作品集的创新",
+    "subtitle": "探索创意的未来。",
+    "accent": "重塑您的作品集。",
+    "portfolioLabel": "作品集系列",
+    "viewProject": "查看在线项目"
+  }
+}

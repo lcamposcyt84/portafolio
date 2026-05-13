@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "home": "HOME",
+    "portfolio": "PORTFOLIO",
+    "services": "SERVICES",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "title": "WEBSTREAM:\nDIGITAL ARCHITECTURE\nWITHOUT LIMITS",
+    "subtitle": "WHERE ENGINEERING BECOMES ART",
+    "accent": "Your portfolio reimagined.",
+    "portfolioLabel": "PORTFOLIO SET",
+    "viewProject": "View live project"
+  },
+  "footer": {
+    "description": "Building the future of the web, one pixel at a time.",
+    "rights": "All rights reserved.",
+    "scanToFollow": "Scan to follow us on"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Next generation digital solutions",
+    "techTitle": "Technologies we work with",
+    "items": {
+      "web": { "title": "Fullstack Web Development", "desc": "Scalable and high-performance web applications." },
+      "uiux": { "title": "Premium UI/UX Design", "desc": "Modern, intuitive, and user-centered interfaces." },
+      "mobile": { "title": "Mobile Apps", "desc": "Cross-platform development with React Native." },
+      "web3": { "title": "Web3 & Smart Contracts", "desc": "Blockchain integration and Solidity development." }
+    }
+  },
+  "projects": {
+    "categories": {
+      "work": "Work Done",
+      "collaboration": "Collaboration"
+    },
+    "section": {
+      "title": "Featured Projects",
+      "subtitle": "A selection of works that demonstrate my ability to build complete end-to-end solutions."
+    },
+    "actions": {
+      "viewDetails": "View Details",
+      "viewProject": "View Project",
+      "repository": "Repository"
+    },
+    "titles": {
+      "tsmetal": "TS Metal Doors",
+      "cracka": "Cracka Plumbing Services",
+      "leiton": "Leiton GP",
+      "mezko": "Mezko Latam",
+      "quedate": "Quedate.net"
+    },
+    "descriptions": {
+      "tsmetal": "Web development for TS Metal Doors.",
+      "cracka": "Web platform for plumbing services.",
+      "leiton": "Corporate site and services portfolio.",
+      "mezko": "Digital development collaboration for Mezko Latam.",
+      "quedate": "Participation in the Quedate.net project."
+    }
+  }
+}

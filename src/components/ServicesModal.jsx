@@ -1,13 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import styles from './ServicesModal.module.css';
-
-const SERVICES = [
-  { title: 'Desarrollo Web Fullstack', desc: 'Aplicaciones web escalables y de alto rendimiento.' },
-  { title: 'Diseño UI/UX Premium', desc: 'Interfaces modernas, intuitivas y centradas en el usuario.' },
-  { title: 'Apps Móviles', desc: 'Desarrollo multiplataforma con React Native.' },
-  { title: 'Web3 & Smart Contracts', desc: 'Integración blockchain y desarrollo en Solidity.' }
-];
 
 const TECH_LOGOS = [
   { name: 'React', slug: 'react' },
@@ -21,6 +15,15 @@ const TECH_LOGOS = [
 ];
 
 export const ServicesModal = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
+
+  const services = [
+    { key: 'web', ...t('services.items.web', { returnObjects: true }) },
+    { key: 'uiux', ...t('services.items.uiux', { returnObjects: true }) },
+    { key: 'mobile', ...t('services.items.mobile', { returnObjects: true }) },
+    { key: 'web3', ...t('services.items.web3', { returnObjects: true }) }
+  ];
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -44,14 +47,14 @@ export const ServicesModal = ({ isOpen, onClose }) => {
             </button>
             
             <div className={styles.header}>
-              <h2 className={styles.title}>Nuestros Servicios</h2>
-              <p className={styles.subtitle}>Soluciones digitales de próxima generación</p>
+              <h2 className={styles.title}>{t('services.title')}</h2>
+              <p className={styles.subtitle}>{t('services.subtitle')}</p>
             </div>
 
             <div className={styles.grid}>
-              {SERVICES.map((service, idx) => (
+              {services.map((service, idx) => (
                 <motion.div 
-                  key={idx} 
+                  key={service.key} 
                   className={styles.serviceCard}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -69,8 +72,9 @@ export const ServicesModal = ({ isOpen, onClose }) => {
             </div>
 
             <div className={styles.techSection}>
-              <h3 className={styles.techTitle}>Tecnologías con las que trabajamos</h3>
+              <h3 className={styles.techTitle}>{t('services.techTitle')}</h3>
               <div className={styles.techGrid}>
+                {/* ... (keep tech grid as is) */}
                 {TECH_LOGOS.map((tech, idx) => (
                   <motion.div 
                     key={tech.name} 

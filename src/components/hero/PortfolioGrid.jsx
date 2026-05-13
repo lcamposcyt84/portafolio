@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import PortfolioCard from './PortfolioCard';
 import { projectsData } from '../../data/projects';
 
 export default function PortfolioGrid() {
+  const { t } = useTranslation();
+
   return (
     <div className="portfolio-section">
       <div className="portfolio-label-container">
@@ -18,7 +21,7 @@ export default function PortfolioGrid() {
             document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
-          PORTAFOLIO
+          {t('nav.portfolio')}
         </motion.a>
       </div>
 

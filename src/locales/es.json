@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "home": "INICIO",
+    "portfolio": "PORTAFOLIO",
+    "services": "SERVICIOS",
+    "contact": "CONTACTO"
+  },
+  "hero": {
+    "title": "WEBSTREAM:\nARQUITECTURA DIGITAL\nSIN LÍMITES",
+    "subtitle": "DONDE LA INGENIERÍA SE VUELVE ARTE",
+    "accent": "Tu portafolio reimaginado.",
+    "portfolioLabel": "SET DE PORTAFOLIO",
+    "viewProject": "Ver proyecto en vivo"
+  },
+  "footer": {
+    "description": "Construyendo el futuro de la web, un pixel a la vez.",
+    "rights": "Todos los derechos reservados.",
+    "scanToFollow": "Escanea para seguirnos en"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones digitales de próxima generación",
+    "techTitle": "Tecnologías con las que trabajamos",
+    "items": {
+      "web": { "title": "Desarrollo Web Fullstack", "desc": "Aplicaciones web escalables y de alto rendimiento." },
+      "uiux": { "title": "Diseño UI/UX Premium", "desc": "Interfaces modernas, intuitivas y centradas en el usuario." },
+      "mobile": { "title": "Apps Móviles", "desc": "Desarrollo multiplataforma con React Native." },
+      "web3": { "title": "Web3 & Smart Contracts", "desc": "Integración blockchain y desarrollo en Solidity." }
+    }
+  },
+  "projects": {
+    "categories": {
+      "work": "Trabajo Realizado",
+      "collaboration": "Colaboración"
+    },
+    "section": {
+      "title": "Proyectos Destacados",
+      "subtitle": "Una selección de trabajos que demuestran mi capacidad para construir soluciones completas end-to-end."
+    },
+    "actions": {
+      "viewDetails": "Ver Detalles",
+      "viewProject": "Ver Proyecto",
+      "repository": "Repositorio"
+    },
+    "titles": {
+      "tsmetal": "TS Metal Doors",
+      "cracka": "Cracka Plumbing Services",
+      "leiton": "Leiton GP",
+      "mezko": "Mezko Latam",
+      "quedate": "Quedate.net"
+    },
+    "descriptions": {
+      "tsmetal": "Desarrollo web para TS Metal Doors.",
+      "cracka": "Plataforma web para servicios de plomería.",
+      "leiton": "Sitio corporativo y portafolio de servicios.",
+      "mezko": "Colaboración en el desarrollo digital para Mezko Latam.",
+      "quedate": "Participación en el proyecto Quedate.net."
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "portfolio": "ポートフォリオ",
+    "services": "サービス",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "title": "VISUAL VISTAZO: デザインとポートフォリオの革新",
+    "subtitle": "クリエイティビティの未来を発見する。",
+    "accent": "あなたのポートフォリオを再構築します。",
+    "portfolioLabel": "ポートフォリオセット",
+    "viewProject": "ライブプロジェクトを表示"
+  }
+}

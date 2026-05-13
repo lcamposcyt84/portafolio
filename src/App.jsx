@@ -5,8 +5,10 @@ import { Footer } from './components/layout/Footer';
 import VideoBackground from './components/hero/VideoBackground';
 import HeroOverlay from './components/hero/HeroOverlay';
 import PortfolioGrid from './components/hero/PortfolioGrid';
+import { useLanguageDetection } from './hooks/useLanguageDetection';
 
 function App() {
+  useLanguageDetection();
   return (
     <div className="page-wrapper">
       {/* ── Video Background ── */}

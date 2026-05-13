@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { ServicesModal } from './ServicesModal';
 
 export const Navbar = () => {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navItems = [
+    { key: 'home', id: 'inicio', label: t('nav.home') },
+    { key: 'portfolio', id: 'portafolio', label: t('nav.portfolio') },
+    { key: 'services', id: 'servicios', label: t('nav.services') },
+    { key: 'contact', id: 'contacto', label: t('nav.contact') },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,18 +76,17 @@ export const Navbar = () => {
         </div>
 
         <nav className="hidden md:flex items-center gap-6 lg:gap-10">
-          {['INICIO', 'PORTAFOLIO', 'SERVICIOS', 'CONTACTO'].map((item) => {
-            const targetId = item.toLowerCase();
-            const isActive = activeSection === targetId;
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
             
             return (
               <a
-                key={item}
-                href={`#${targetId}`}
-                onClick={(e) => handleScrollTo(e, targetId)}
+                key={item.key}
+                href={`#${item.id}`}
+                onClick={(e) => handleScrollTo(e, item.id)}
                 className={`text-[10px] font-display font-bold tracking-[0.15em] transition-colors duration-300 relative group cursor-pointer ${isActive ? 'text-primary' : 'text-white'}`}
               >
-                {item}
+                {item.label}
                 <span className={`absolute -bottom-2 left-0 h-[2px] bg-primary transition-all duration-300 ${isActive ? 'w-full shadow-[0_0_8px_#00f0ff]' : 'w-0 group-hover:w-full'}`}></span>
               </a>
             );
@@ -106,21 +114,20 @@ export const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-[#010208]/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 flex flex-col gap-6"
         >
-          {['INICIO', 'PORTAFOLIO', 'SERVICIOS', 'CONTACTO'].map((item) => {
-            const targetId = item.toLowerCase();
-            const isActive = activeSection === targetId;
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
             
             return (
               <a
-                key={item}
-                href={`#${targetId}`}
+                key={item.key}
+                href={`#${item.id}`}
                 onClick={(e) => {
-                  handleScrollTo(e, targetId);
+                  handleScrollTo(e, item.id);
                   setIsMobileMenuOpen(false);
                 }}
                 className={`text-[12px] font-display font-bold tracking-[0.15em] transition-colors duration-300 ${isActive ? 'text-primary' : 'text-white/80'}`}
               >
-                {item}
+                {item.label}
               </a>
             );
           })}

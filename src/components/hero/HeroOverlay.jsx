@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export default function HeroOverlay() {
+  const { t } = useTranslation();
+
   return (
     <div className="hero-overlay">
       <motion.h1
@@ -8,12 +11,9 @@ export default function HeroOverlay() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        style={{ whiteSpace: 'pre-line' }}
       >
-        WEBSTREAM:
-        <br />
-        ARQUITECTURA DIGITAL
-        <br />
-        SIN LÍMITES
+        {t('hero.title')}
       </motion.h1>
 
       <motion.div
@@ -27,7 +27,7 @@ export default function HeroOverlay() {
           <span className="line"></span>
         </div>
         <p className="hero-subtitle">
-          DONDE LA INGENIERÍA SE VUELVE ARTE
+          {t('hero.subtitle')}
         </p>
         <div className="subtitle-decorator right">
           <span className="line"></span>

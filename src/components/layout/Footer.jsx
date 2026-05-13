@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './Footer.module.css';
 
 const TECH_LOGOS = [
@@ -17,6 +18,7 @@ const TECH_LOGOS = [
 ];
 
 export const Footer = () => {
+  const { t } = useTranslation();
   const [activeQR, setActiveQR] = useState(null);
 
   return (
@@ -49,7 +51,7 @@ export const Footer = () => {
             <span className={styles.logoOverlayText}>WEBSTREAM</span>
           </a>
           <p className={styles.description}>
-            Construyendo el futuro de la web, un pixel a la vez.
+            {t('footer.description')}
           </p>
         </div>
         
@@ -71,7 +73,7 @@ export const Footer = () => {
       
       <div className={styles.bottom}>
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Webstream. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Webstream. {t('footer.rights')}</p>
         </div>
       </div>
 
@@ -85,7 +87,7 @@ export const Footer = () => {
               className={styles.modalQRImage}
             />
             <p className={styles.modalText}>
-              Escanea para seguirnos en {activeQR === 'instagram' ? 'Instagram' : 'TikTok'}
+              {t('footer.scanToFollow')} {activeQR === 'instagram' ? 'Instagram' : 'TikTok'}
             </p>
           </div>
         </div>
