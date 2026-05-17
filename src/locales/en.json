@@ -45,16 +45,12 @@
     "titles": {
       "tsmetal": "TS Metal Doors",
       "cracka": "Cracka Plumbing Services",
-      "leiton": "Leiton GP",
-      "mezko": "Mezko Latam",
-      "quedate": "Quedate.net"
+      "leiton": "Leiton GP"
     },
     "descriptions": {
       "tsmetal": "Web development for TS Metal Doors.",
       "cracka": "Web platform for plumbing services.",
-      "leiton": "Corporate site and services portfolio.",
-      "mezko": "Digital development collaboration for Mezko Latam.",
-      "quedate": "Participation in the Quedate.net project."
+      "leiton": "Corporate site and services portfolio."
     }
   }
 }

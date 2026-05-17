@@ -28,25 +28,5 @@ export const projectsData = [
     tech: ['Web Design', 'Development'],
     link: 'https://www.leitongp.com/',
     github: '#'
-  },
-  {
-    id: 4,
-    titleKey: 'projects.titles.mezko',
-    categoryKey: 'projects.categories.collaboration',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600',
-    descriptionKey: 'projects.descriptions.mezko',
-    tech: ['Colaboración', 'Frontend'],
-    link: 'https://www.mezkolatam.com/',
-    github: '#'
-  },
-  {
-    id: 5,
-    titleKey: 'projects.titles.quedate',
-    categoryKey: 'projects.categories.collaboration',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600',
-    descriptionKey: 'projects.descriptions.quedate',
-    tech: ['Colaboración', 'Web'],
-    link: 'https://quedate.net/',
-    github: '#'
   }
 ];
